@@ -1,0 +1,15 @@
+{  
+  "compilerOptions": {  
+    "target": "ES6",  
+    "module": "commonjs",  
+    "paths": {
+      "@/*": ["./src/*"],
+    } 
+  },  
+  "include": [  
+    "src/**/*"  
+, "vite"  ],  
+  "exclude": [  
+    "node_modules"  
+  ]  
+}
