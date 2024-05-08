@@ -10,6 +10,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --theme-orange: rgb(236,114,18);
+  --theme-bule-light: rgb(114,145,192);
+  --theme-bule-dark: rgb(8,79,154);
 }
 
 body {
