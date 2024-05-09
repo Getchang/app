@@ -1,5 +1,7 @@
 <template>
+  <!-- container -->
   <div class="root-container">
+    <!-- swiper -->
     <section class="swiper-con">
       <swiper :loop="true" :slidesPerView="1" :spaceBetween="30" :autoplay="{ delay: 2500 }" :navigation="true" :modules
         :pagination @swiper="onSwiper" @realIndexChange="onSlideChange">
@@ -23,6 +25,8 @@
         </swiper-slide>
       </swiper>
     </section>
+    <!-- 介绍 -->
+    <section class="introduce"></section>
   </div>
 </template>
 

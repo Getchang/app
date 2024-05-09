@@ -1,7 +1,7 @@
 <template>
   <!-- Header -->
-  <header id="header" class="flex jc-sa">
-    <div class="logo">灵启云</div>
+  <header id="header" class="flex jc-sa" :class="currentRoute">
+    <div class=" logo">灵启云</div>
     <ul class="nav flex jc-s">
       <li v-for="item in navList" @click="changeNav(item)" :class="item.active && 'active'">{{ item.name }}</li>
     </ul>
@@ -9,19 +9,35 @@
 </template>
 
 <script setup>
+const route = useRoute();
+
 const router = useRouter();
 
 const navList = ref([{ name: '首页', active: true, path: 'index' }, { name: '关于我们', active: false, path: 'about' }])
 
-const changeNav = (item) => {
-  console.log(navList, item);
+const currentRoute = ref('');
 
+const changeNav = (item) => {
   navList.value = navList.value.map((v) => {
     return { ...v, active: item.name === v.name ? true : false }
-  }
-  )
+  })
   router.push({ path: '/' + item.path })
 }
+
+watch(
+  () => route.path,
+  (path, prevPath) => {
+    currentRoute.value = path.replace('\/', '');
+    navList.value = navList.value.map((v) => {
+      return { ...v, active: '/' + v.path === path ? true : false }
+    })
+    console.log(path, navList)
+    router.push({ path })
+  },
+  {
+    immediate: true
+  }
+)
 </script>
 
 <style lang="scss" scoped>
@@ -31,6 +47,10 @@ const changeNav = (item) => {
   height: 60px;
   background: var(--theme-bule-dark);
   color: var(--font-color01);
+
+  &.about {
+    background: rgba(13, 39, 89, 0.5);
+  }
 
   .logo {
     width: 150px;
