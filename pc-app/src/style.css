@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: Microsoft YaHei, Helvetica, Arial, PingFang SC, Hiragino Sans GB, san-serif !important;
+  font-family: Microsoft YaHei, Helvetica, Arial, PingFang SC, Hiragino Sans GB, san-serif;
   height: 100%;
   font-size: 14px;
 }
@@ -40,7 +40,8 @@ button, input, select, textarea {
 }
 
 html {
-  box-sizing: border-box
+  box-sizing: border-box;
+  --font-color01: #fff
 }
 
 * {
@@ -71,9 +72,65 @@ td, th {
 }
 
 
+/*=== Basic flex ===*/
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-1 {
+  flex-grow: 1;
+}
+
+.flex-2 {
+  flex-grow: 2;
+}
+
+.flex-3 {
+  flex-grow: 3;
+}
+
+.flex-4 {
+  flex-grow: 4;
+}
+
+.flex-6 {
+  flex-grow: 6;
+}
+
+.jc-s {
+  justify-content: flex-start;
+}
+
+.jc-e {
+  justify-content: flex-end;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.ali-s {
+  align-items: flex-start;
+}
+
+.ali-e {
+  align-items: flex-end;
+}
+
+.no-shrink {
+  flex-shrink: 0;
+}
+
+
 #app {
   width: 100%;
-  height: 100%;
   margin: 0 auto;
 }
 
