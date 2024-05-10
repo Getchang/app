@@ -1,7 +1,7 @@
 <template>
   <!-- Header -->
   <header id="header" class="flex jc-sa" :class="currentRoute">
-    <div class=" logo">灵启云</div>
+    <div class="logo">灵启云</div>
     <ul class="nav flex jc-s">
       <li v-for="item in navList" @click="changeNav(item)" :class="item.active && 'active'">{{ item.name }}</li>
     </ul>
@@ -18,21 +18,22 @@ const navList = ref([{ name: '首页', active: true, path: 'index' }, { name: '�
 const currentRoute = ref('');
 
 const changeNav = (item) => {
+  switchNavbar(item.path)
+}
+
+const switchNavbar = (path) => {
   navList.value = navList.value.map((v) => {
-    return { ...v, active: item.name === v.name ? true : false }
+    return { ...v, active: v.path === path ? true : false }
   })
-  router.push({ path: '/' + item.path })
+  router.push({ path: '/' + path })
 }
 
 watch(
   () => route.path,
   (path, prevPath) => {
-    currentRoute.value = path.replace('\/', '');
-    navList.value = navList.value.map((v) => {
-      return { ...v, active: '/' + v.path === path ? true : false }
-    })
-    console.log(path, navList)
-    router.push({ path })
+    const p = path.replace('\/', '');
+    currentRoute.value = p;
+    switchNavbar(p)
   },
   {
     immediate: true
@@ -41,6 +42,12 @@ watch(
 </script>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 900px) {
+  #header div.logo {
+    margin: 0 8%;
+  }
+}
+
 #header {
   font-size: 14px;
   font-weight: bold;

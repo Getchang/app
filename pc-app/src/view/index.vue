@@ -2,176 +2,119 @@
   <!-- container -->
   <div class="root-container">
     <!-- swiper -->
-    <section class="swiper-con">
-      <swiper :loop="true" :slidesPerView="1" :spaceBetween="30" :autoplay="{ delay: 2500 }" :navigation="true" :modules
-        :pagination @swiper="onSwiper" @realIndexChange="onSlideChange">
-        <div class="swiper-bg"></div>
-        <div class="swiper-modules">
-          <div class="slide-con flex slide-con1" v-if="swiperActiveIdx">
-            <p class="liner">专业化</p>
-            <p>灵活用工方案</p>
-          </div>
-          <div class="slide-con flex slide-con2">
-            <p class="liner liner1">专注灵活用工业务</p>
-            <p class="">致力于企业端财税数字化、灵工人员成本结算系统的完善,实现大幅的提效降本。
-            </p>
+    <swiper></swiper>
+    <!-- 介绍 -->
+    <section class="introduce">
+      <div class="com-title">
+        <img src="../assets/images/Integrated_services.png" alt="">
+        <h2>灵启云综合服务</h2>
+        <p>客户精准营销，可视化数据分析，灵工人员成本结算系统</p>
+      </div>
+      <div class="indata flex">
+        <img src="../assets/images/2.png" alt="">
+        <div>
+          <img src="../assets/images/data-bg.png" alt="">
+          <div class="flex">
+            <p class="p1">专业调研机构数据表明</p>
+            <p class="p2">企业选择灵活用工方式可实现</p>
+            <p class="p3">大幅的提效降本</p>
           </div>
         </div>
-        <swiper-slide>
-          <img src="../assets/images/bg2.png" alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/bg3.png" alt="">
-        </swiper-slide>
-      </swiper>
+      </div>
     </section>
-    <!-- 介绍 -->
-    <section class="introduce"></section>
   </div>
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-const modules = [Pagination, Navigation]
-
-const pagination = {
-  clickable: true,
-  //修改分页器样式
-  bulletClass: 'swiper-pagination-bullet',
-  //激活样式
-  bulletActiveClass: 'my-bullet-active',
-}
-
-const swiperActiveIdx = ref(0);
-
-const onSwiper = (swiper) => {
-  console.log('swiper', swiper);
-};
-const onSlideChange = (swiper) => {
-  console.log('slide change', swiper);
-  swiperActiveIdx.value = swiper.realIndex;
-};
-
+import swiper from './main/swiper.vue'
 </script>
 
 <style lang="scss" scoped>
 .root-container {
   min-height: 100%;
 
-  .swiper-con {
+  .introduce {
+    margin: 50px 0;
     width: 100%;
-    height: 720px;
+    text-align: center;
 
-    :deep(.swiper) {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-      .swiper-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(../assets/images/bg1.png) no-repeat center;
-        background-size: 100% 100%;
-        opacity: .9;
-        z-index: 9;
+    .com-title {
+      img {
+        display: block;
+        width: 45.1rem;
+        height: 3.2rem;
+        margin-top: 1rem;
+        object-fit: cover;
+        margin: 0 auto;
       }
 
-      .swiper-modules {
-        position: absolute;
-        top: 80px;
-        left: 80px;
-        width: calc(100% - 160px);
-        height: calc(100% - 160px);
-        z-index: 10;
-
-        .slide-con {
-          flex-direction: column;
-          height: 100%;
-
-          p {
-            font-weight: 900;
-            color: #fff;
-          }
-
-          p.liner {
-            font-size: 4.5rem;
-            font-weight: 600;
-            background: linear-gradient(to right, rgb(255, 223, 157), rgb(255, 238, 201));
-            color: transparent;
-            background-clip: text;
-          }
-
-          &.slide-con1 {
-            p {
-              margin: 10px 0;
-              font-size: 5rem;
-
-            }
-
-            p.liner {
-              text-shadow: #000 0px 5px 0;
-            }
-          }
-
-          &.slide-con2 {
-            p {
-              margin: 20px 0;
-              font-size: 1.5rem;
-            }
-
-            p.liner1 {
-              font-size: 4.5rem;
-              text-shadow: #FC0 1px 0 10px;
-            }
-          }
-        }
+      h2 {
+        font-size: 3rem;
+        margin-top: -1.5rem;
       }
 
-      .swiper-slide {
-        position: relative;
-        text-align: center;
-        font-size: 18px;
-        /* Center slide text vertically */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      .swiper-pagination-bullet.my-bullet-active {
-        background: var(--theme-orange);
-        width: 50px;
-        border-radius: 4px;
-        opacity: 1;
-      }
-
-      .swiper-button-prev,
-      .swiper-button-next {
-        color: #fff;
-      }
-
-      .swiper-pagination-bullet {
-        background: #fff;
-        opacity: .8;
+      p {
+        font-size: .9rem;
+        margin: 1rem 0;
       }
     }
 
+    .indata {
+      margin: 60px 0;
+
+      img {
+        width: 50rem;
+        height: 30rem;
+      }
+
+      >div {
+        position: relative;
+        height: 20rem;
+        width: 60rem;
+
+        img {
+          position: absolute;
+          left: -5rem;
+          height: 20rem;
+          width: 65rem;
+          z-index: -1;
+        }
+
+        div.flex {
+          position: absolute;
+          left: -2rem;
+          width: 30rem;
+          height: 15rem;
+          margin-top: 2.5rem;
+          color: #fff;
+          text-align: left;
+          flex-wrap: wrap;
+        }
+
+        p {
+          width: 90%;
+        }
+
+        p.p1 {
+          padding: 0 50px 15px 0;
+          border-bottom: 2px solid #fff;
+          font-size: 2rem;
+        }
+
+        p.p2 {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+
+        p.p3 {
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-top: 10px;
+          color: rgb(255, 233, 184);
+        }
+      }
+    }
   }
 }
 </style>

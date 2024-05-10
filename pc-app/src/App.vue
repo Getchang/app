@@ -1,5 +1,6 @@
 <script setup>
 import Header from './view/components/Header'
+import Footer from './view/components/Footer'
 
 const fontSizeChange = () => {
   document.body.style.fontSize = document.documentElement.clientWidth / 100 + 'px'
@@ -14,6 +15,7 @@ fontSizeChange()
 <template>
   <Header></Header>
   <router-view />
+  <Footer></Footer>
 </template>
 
 <style lang="scss" scoped></style>
