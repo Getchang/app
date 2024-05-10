@@ -73,9 +73,9 @@
       height: 50px;
       line-height: 50px;
       font-size: 20px;
-      background: url('../../../assets/images/logo.png') no-repeat left;
+      background: url('../../../assets/images/logo.png') no-repeat 60px;
       background-size: 55.2px 39.5px;
-      padding-left: 60px;
+      padding-left: 120px;
     }
 
     .qrcode {
