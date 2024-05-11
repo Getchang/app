@@ -1,6 +1,6 @@
 <template>
   <!-- Header -->
-  <header id="header" class="flex jc-sa" :class="currentRoute">
+  <header id="header" class="flex jc-sa" :class="[currentRoute, scrollClass]">
     <div class="logo">灵启云</div>
     <ul class="nav flex jc-s">
       <li v-for="item in navList" @click="changeNav(item)" :class="item.active && 'active'">{{ item.name }}</li>
@@ -16,6 +16,8 @@ const router = useRouter();
 const navList = ref([{ name: '首页', active: true, path: 'index' }, { name: '关于我们', active: false, path: 'about' }])
 
 const currentRoute = ref('');
+
+const scrollClass = ref('');
 
 const changeNav = (item) => {
   switchNavbar(item.path)
@@ -39,6 +41,19 @@ watch(
     immediate: true
   }
 )
+const scrollFn = () => {
+  if (document.documentElement.scrollTop > 0) {
+    scrollClass.value = 'scrolling'
+  } else {
+    scrollClass.value = ''
+  }
+}
+onMounted(() => {
+  window.addEventListener('scroll', scrollFn);
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', scrollFn);
+})
 </script>
 
 <style lang="scss" scoped>
@@ -57,6 +72,13 @@ watch(
 
   &.about {
     background: rgba(13, 39, 89, 0.5);
+  }
+
+  &.scrolling {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
   }
 
   .logo {
