@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="police-msg flex">
-      <div id="recordNo">ICP备案：鲁ICP备20032146号</div>
+      <div id="recordNo">ICP备案：浙ICP备20032146号</div>
       <div>版权所有：杭州微额科技有限公司</div>
       <div class="police flex">
         <img src="../../../assets/images/police.jpg">
