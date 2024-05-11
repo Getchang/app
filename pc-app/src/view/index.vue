@@ -32,6 +32,36 @@
         </div>
       </div>
     </section>
+    <!-- service -->
+    <section class="service">
+      <div class="com-title">
+        <img src="../assets/images/Service_products.png" alt="">
+        <h2>我们能为您做什么</h2>
+        <p>启灵云整合了用工管理、税务咨询、申报自动化以及智能数据分析等核心功能，旨在为企业提供一站式的财税管理服务</p>
+      </div>
+      <div class="service-con">
+        <img src="../assets/images/td.png" alt="">
+        <img src="../assets/images/rl.png" alt="">
+        <img src="../assets/images/auto.png" alt="">
+        <!-- <img src="../assets/images/service_module.png" alt=""> -->
+      </div>
+    </section>
+    <!-- 优势 -->
+    <section class="advantage">
+      <div class="com-h">
+        <div class="com-title">
+          <img src="../assets/images/Scope_of_business.png" alt="">
+          <h2>我们的优势</h2>
+          <p>全面、高效、专业的解决方案，专为现代企业量身打造</p>
+        </div>
+      </div>
+      <div class="advantage-con">
+        <img src="../assets/images/ad2.png" alt="">
+        <img src="../assets/images/ad1.png" alt="">
+        <img src="../assets/images/ad4.png" alt="">
+        <img src="../assets/images/ad3.png" alt="">
+      </div>
+    </section>
   </div>
 </template>
 
@@ -50,12 +80,16 @@ const dList = ref([
   min-height: 100%;
 
   .com-title {
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+
     img {
       display: block;
       width: 45.1rem;
       height: 3.2rem;
       margin-top: 1rem;
-      object-fit: cover;
+      object-fit: contain;
       margin: 0 auto;
     }
 
@@ -109,7 +143,6 @@ const dList = ref([
   .introduce {
     margin: 50px 0;
     width: 100%;
-    text-align: center;
 
     .indata {
       margin: 60px 0;
@@ -167,6 +200,45 @@ const dList = ref([
         }
       }
     }
+  }
+
+  .service {
+    width: 100%;
+  }
+
+  .service,
+  .advantage {
+    width: 100%;
+
+    .service-con,
+    .advantage-con {
+      width: 80%;
+      max-width: 1000px;
+      margin: 50px auto;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .advantage {
+    .com-h {
+      height: auto;
+      min-height: 9rem;
+    }
+
+    .com-title {
+      color: #fff;
+    }
+
+    img:last-child {
+      margin-bottom: 80px;
+    }
+
   }
 }
 </style>
