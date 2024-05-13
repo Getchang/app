@@ -15,11 +15,11 @@
       </div>
       <img src="../../assets/images/work.png" alt="">
     </div>
-    <div class="com-h">
+    <!-- <div class="com-h">
       <div class="com-tab">我们的资质</div>
-    </div>
+    </div> -->
     <div class="honer">
-      <img src="../../assets/images/honer.png" alt="">
+      <!-- <img src="../../assets/images/honer.png" alt=""> -->
     </div>
     <div class="com-tab">合作伙伴</div>
     <div class="combination">

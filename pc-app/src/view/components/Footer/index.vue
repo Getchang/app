@@ -8,33 +8,33 @@
           <span>公司名称：</span>
           杭州微额科技有限公司
         </p>
-        <p>
+        <!-- <p>
           <span>联系电话：</span>
           122221222121
-        </p>
+        </p> -->
       </div>
       <div class="info-msg">
         <p>
           <span>电子邮件：</span>
-          demo@gmail.com
+          kf@hzweie.com
         </p>
         <p>
           <span>联系地址：</span>
-          浙江省杭州市滨江区长河街道越达巷92号创业智慧大厦
+          浙江省杭州市上城区庆春路157号5A28室-1
         </p>
       </div>
-      <div class="qrcode">
+      <!-- <div class="qrcode">
         <img src="../../../assets/images/footer_img_erweima.bdbfa02.png" alt="">
         <p>关注了解更多</p>
-      </div>
+      </div> -->
     </div>
     <div class="police-msg flex">
-      <div id="recordNo">ICP备案：浙ICP备20032146号</div>
+      <div id="recordNo">ICP备案： 浙ICP备2024087908号</div>
       <div>版权所有：杭州微额科技有限公司</div>
-      <div class="police flex">
+      <!-- <div class="police flex">
         <img src="../../../assets/images/police.jpg">
         <p>浙公网安备：37010102000863</p>
-      </div>
+      </div> -->
     </div>
   </footer>
 </template>
